@@ -1,0 +1,82 @@
+
+/* Set a fixed height for the carousel items */
+.carousel-item {
+  /* height: 40rem;  */
+}
+
+.banner-content-height{
+    height:25rem
+}
+
+.padding-bot-6{
+    padding-bottom: 6rem !important;
+}
+
+.padding-top-4{
+    padding-top: 4rem ! important;
+}
+/* Styling for the indicators container */
+.carousel-indicators {
+    position:absolute;
+    right:0;
+    bottom:0;
+    left:0;
+    /* z-index:15; */
+    display:flex;
+    justify-content:center;
+    padding-left:0;
+    margin-right:15%;
+    margin-left:15%;
+    list-style:none;
+    margin-bottom:1rem;
+  }
+  
+  /* Styling for each indicator */
+  .carousel-indicators li {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #221f1f;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+  }
+  
+  /* Styling for the active indicator */
+  .carousel-indicators .active {
+    opacity: 1 !important; 
+    background-color: #fff!important; 
+    border-color: #fff; 
+  }
+
+  .carousel-indicators button {
+    border: none; /* Remove border */
+    padding: 1px; /* Remove padding */
+    cursor: pointer;
+    width: 20px;
+    margin-right:4px;
+    background-color: #534d4d;
+    border-color: #534d4d; 
+  }
+  
+  .carousel-indicators button:focus {
+    outline: none; /* Remove focus outline */
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }

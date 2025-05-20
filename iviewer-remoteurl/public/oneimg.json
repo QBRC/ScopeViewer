@@ -1,0 +1,36 @@
+[
+  {
+    "image_id": 1,
+    "image_name": "Visium_FFPE_Human_Breast_Cancer_image",
+    "pathology_histology": "Normal",
+    "tile_folder_url": "https://cdc.biohpc.swmed.edu/scopeviewer_data/Visium_FFPE_Human_Breast_Cancer_image_original.dzi",
+    "mask_url": "https://cdc.biohpc.swmed.edu/scopeviewer_data/Visium_FFPE_Human_Breast_Cancer_image_mask.dzi",
+    "smp_layer":"https://cdc.biohpc.swmed.edu/scopeviewer_data/sqlite_data.db",
+    "legend":{
+      "tumor_nuclei": "#00ff00",
+      "stromal_nuclei": "#ff0000",
+      "immune_nuclei": "#0000ff",
+      "blood_cell": "#ff00ff",
+      "macrophage": "#ffff00",
+      "dead_nuclei": "#0094e1"
+    },
+    "tree_layout": [{
+      "value": "tissues",
+      "label": "Tissue Regions",
+      "children": [
+          {
+              "value": "group1",
+              "label": "Group 1",
+              "children": [
+                  { "value": "fat", "label": "Fat", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/fat_blue.dzi"},
+                  { "value": "fibrous", "label": "Fibrous", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/fibrous_red.dzi"}
+              ]
+          },
+          {  "value": "immune", "label": "Immune", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/immune_purple.dzi"},
+          {  "value": "invasive", "label": "Invasive", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/invasive_green.dzi"},
+          {  "value": "necrosis", "label": "Necrosis", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/necrosis_yellow.dzi"}
+      ]
+  }]
+  }
+ 
+]

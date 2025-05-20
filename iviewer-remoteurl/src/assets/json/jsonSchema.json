@@ -1,0 +1,132 @@
+{
+    "schema": {
+        "type": "array",
+        "items": [
+            {
+                "type": "object",
+                "properties": {
+                    "image_id": {
+                        "type": "integer"
+                    },
+                    "image_name": {
+                        "type": "string"
+                    },
+                    "pathology_histology": {
+                        "type": "string"
+                    },
+                    "width": {
+                        "type": "integer"
+                    },
+                    "height": {
+                        "type": "integer"
+                    },
+                    "format": {
+                        "type": "string"
+                    },
+                    "tile_size": {
+                        "type": "integer"
+                    },
+                    "tile_folder_url": {
+                        "type": "string"
+                    },
+                    "mask_url": {
+                        "type": "string"
+                    },
+                    "spot_level": {
+                        "type": "object",
+                        "properties": {
+                            "smp_gene_list": {
+                                "type": "string"
+                            },
+                            "smp_count_csv": {
+                                "type": "string"
+                            },
+                            "smp_loc_csv": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "smp_gene_list",
+                            "smp_count_csv",
+                            "smp_loc_csv"
+                        ]
+                    },
+                    "tissue_region": {
+                        "type": "array",
+                        "items": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "value": {
+                                        "type": "string"
+                                    },
+                                    "label": {
+                                        "type": "string"
+                                    },
+                                    "children": {
+                                        "type": "array",
+                                        "items": [
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "string"
+                                                    },
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "path": {
+                                                        "type": "string"
+                                                    },
+                                                    "format": {
+                                                        "type": "string"
+                                                    },
+                                                    "overlap": {
+                                                        "type": "integer"
+                                                    },
+                                                    "tilesize": {
+                                                        "type": "integer"
+                                                    },
+                                                    "width": {
+                                                        "type": "integer"
+                                                    },
+                                                    "height": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "value",
+                                                    "label",
+                                                    "path",
+                                                    "format",
+                                                    "overlap",
+                                                    "tilesize",
+                                                    "width",
+                                                    "height"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "value",
+                                    "label",
+                                    "children"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "image_id",
+                    "image_name",
+                    "width",
+                    "height",
+                    "format",
+                    "tile_size",
+                    "tile_folder_url"
+                ]
+            }
+        ]
+    }
+}

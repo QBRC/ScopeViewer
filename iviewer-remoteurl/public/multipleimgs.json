@@ -1,0 +1,50 @@
+[  
+  {
+  "image_id": 0,
+  "image_name": "Demo Whole Slide 002",
+  "pathology_histology": "Normal",
+  "tile_folder_url": "slides/9388.svs"
+},
+  {
+    "image_id": 1,
+    "image_name": "Demo Whole Slide 001",
+    "pathology_histology": "Normal",
+    "tile_folder_url": "https://cdc.biohpc.swmed.edu/scopeviewer_data/Visium_FFPE_Human_Breast_Cancer_image_original.dzi",
+    "mask_url": "https://cdc.biohpc.swmed.edu/scopeviewer_data/Visium_FFPE_Human_Breast_Cancer_image_mask.dzi",
+    "smp_layer":"https://cdc.biohpc.swmed.edu/scopeviewer_data/sqlite_data.db",
+    "tree_layout": [{
+      "value": "tissues",
+      "label": "Tissue Regions",
+      "children": [
+          {
+              "value": "group1",
+              "label": "Group 1",
+              "children": [
+                  { "value": "fat", "label": "Fat", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/fat_blue.dzi"},
+                  { "value": "fibrous", "label": "Fibrous", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/fibrous_red.dzi"}
+              ]
+          },
+          {  "value": "immune", "label": "Immune", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/immune_purple.dzi"},
+          {  "value": "invasive", "label": "Invasive", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/invasive_green.dzi"},
+          {  "value": "necrosis", "label": "Necrosis", "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/necrosis_yellow.dzi"}
+      ]
+  }]
+  },
+  {
+    "image_id": 2,
+    "image_name": "Demo Whole Slide 002",
+    "pathology_histology": "Normal",
+    "tile_folder_url": "https://cdc.biohpc.swmed.edu/scopeviewer_data/sample_image.dzi",
+    "tree_layout": [{
+      "value": "cell mask",
+      "label": "Cell Level Mask",
+      "path": "https://cdc.biohpc.swmed.edu/scopeviewer_data/sample_masks.dzi"
+    }]
+  },
+  {
+    "image_id": 3,
+    "image_name": "Demo Whole Slide 003",
+    "pathology_histology": "Moderately differentiated adenocarcinoma",
+    "tile_folder_url": "https://cdc.biohpc.swmed.edu/scopeviewer_data/Visium_FFPE_Human_Prostate_Acinar_Cell_Carcinoma_image.dzi"
+  }
+]

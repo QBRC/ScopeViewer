@@ -1,0 +1,26 @@
+iviewer-remoteurl/node_modules/
+/iviewer-remoteurl/.pnp
+/iviewer-remoteurl/.pnp.js
+/iviewer-remoteurl/coverage
+/iviewer-remoteurl/build
+
+# Ignore log files inside iviewer-remoteurl
+/iviewer-remoteurl/npm-debug.log*
+/iviewer-remoteurl/yarn-debug.log*
+/iviewer-remoteurl/yarn-error.log*
+
+slides/*
+!slides/.gitkeep
+
+smp_data/*
+!smp_data/.gitkeep
+
+__pycache__/
+*.py[cod]
+**/.DS_Store
+.dockerignore
+.ipynb_checkpoints
+z.quickstart.txt
+selected_models
+ckpts
+z.*
