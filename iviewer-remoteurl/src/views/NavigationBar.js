@@ -7,44 +7,26 @@ import { TwitterShareButton } from "react-share";
 import singleImgJSON from "../assets/json/oneimg.json";
 import multiImGJSON from "../assets/json/multipleimgs.json";
 
-// import "../assets/css/argon-design-system.module.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import "../assets/js/argon-design-system.js";
-
 function NavigationBar() {
     const [multiimg, setMultiImg] = useState();
     const [singleimg, setSingleImg] = useState();
 
-
-
     useEffect(() => {
-        // axios.get('multipleimgs.json').then((res) => {
-        //     setMultiImg(res.data);
-        // })
-
-        // axios.get('oneimg.json').then((res) => {
-        //     setSingleImg(res.data[0]);
-        //     console.log('datatype', res.data[0])
-        // })
         setSingleImg(singleImgJSON[0]);
         setMultiImg(multiImGJSON);
     }, [])
 
     return (
         <>
-          
             <nav id="navbar-main" className="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2">
                 <div className="container">
                     <Link className="navbar-brand mr-lg-5" to="/">
                         <img src={require("../assets/img/brand/colorlogo.png")} style={{ height: 38 + "px" }} alt="colorlogo"/>
                     </Link>
-
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-
                     <div className="navbar-collapse collapse" id="navbar_global">
-
                         <div className="navbar-collapse-header">
                             <div className="row">
                                 <div className="col-6 collapse-brand">
@@ -61,8 +43,6 @@ function NavigationBar() {
                             </div>
                         </div>
 
-
-
                         <ul className="navbar-nav navbar-nav-hover align-items-lg-center">
                             <li className="nav-item dropdown">
                                 <a href="#" className="nav-link" data-toggle="dropdown" role="button">
@@ -71,23 +51,18 @@ function NavigationBar() {
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-xl">
                                     <div className="dropdown-menu-inner">
-
                                         <Link to="/prepareData" className="media d-flex align-items-center">
-
                                             <div className="media-body ml-3">
                                                 <h6 className="heading text-primary mb-md-1">Prepare Data</h6>
                                                 <p className="description d-none d-md-inline-block mb-0">How to prepare data, and configure server.</p>
                                             </div>
-
                                         </Link>
-
                                         <Link to="/prepareJson" className="media d-flex align-items-center">
                                             <div className="media-body ml-3">
                                                 <h6 className="heading text-primary mb-md-1">Prepare JSON</h6>
                                                 <p className="description d-none d-md-inline-block mb-0">Use our JSON example to prepare yours.</p>
                                             </div>
                                         </Link>
-
                                         <Link to="/validateJson" className="media d-flex align-items-center">
                                             <div className="media-body ml-3">
                                                 <h6 className="heading text-primary mb-md-1">Validate JSON</h6>
@@ -148,12 +123,12 @@ function NavigationBar() {
                                     <i className="fa fa-twitter-square"></i>
                                 </TwitterShareButton>
                             </li>
-                            {/* <li className="nav-item">
-                                <a className="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system" target="_blank" data-toggle="tooltip" title="Star us on Github">
+                            <li className="nav-item">
+                                <a className="nav-link nav-link-icon" href="https://github.com/QBRC/ScopeViewer" target="_blank" data-toggle="tooltip" title="Star us on Github">
                                     <i className="fa fa-github"></i>
                                     <span className="nav-link-inner--text d-lg-none">Github</span>
                                 </a>
-                            </li> */}
+                            </li>
                             <li className="nav-item">
                                 <Link to={{ pathname: "/imageviewer", state: { selectedimg: singleimg } }} className="btn btn-outline-primary" >
                                     <span className="nav-link-inner--text">Viewer Demo</span>
@@ -172,7 +147,6 @@ function NavigationBar() {
                 </div>
             </nav>
         </>
-
     );
 }
 

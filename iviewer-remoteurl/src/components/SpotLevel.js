@@ -196,12 +196,12 @@ class SpotLevel extends Component {
             console.warn('Quadtree not ready yet.');
             return;
           }
-        const hit   = tree.find(mx, my, R);
+        const hit = tree.find(mx, my, R);
       
         //Show/hide 
         if (hit) {
           el.style.display = 'block';
-          el.textContent =  `x: ${hit.cx.toFixed(1)}, y: ${hit.cy.toFixed(1)}, value: ${hit.color}`;
+          el.textContent =  `X: ${hit.cx.toFixed(1)}, Y: ${hit.cy.toFixed(1)}, Expression: ${hit.color}`;
         //   console.log(`x: ${hit.cx.toFixed(1)}\ny: ${hit.cy.toFixed(1)}\nvalue: ${hit.color}`);
         } else {
           el.style.display = 'none';

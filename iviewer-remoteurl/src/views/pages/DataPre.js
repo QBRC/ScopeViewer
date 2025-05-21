@@ -3,10 +3,8 @@ import Banner from '../Banner';
 import { Link } from 'react-router-dom';
 import '../../assets/css/viewer.css';
 
-
 function DataPre() {
     var smp_layer = "http://hostname/sqlite_data.db";
-
     return (
         <>
             <Banner message="Prepare Data for Region Level, Spot Level and Cell Level Image Display">
@@ -40,7 +38,7 @@ function DataPre() {
                                     <div className="tab-pane fade show active" id="tabs-text-5" role="tabpanel" aria-labelledby="tabs-text-5-tab">
                                         <div className="row">
                                             <div className="col-md-12">
-                                             <h5>Supported Formats</h5>
+                                                <h5>Supported Formats</h5>
                                                 <p className="description">
                                                     Our viewer supports both <strong>Deep Zoom Image (.dzi)</strong> format and <strong>native SVS/TIFF slides</strong>,
                                                     offering flexibility for your digital pathology workflow.
@@ -91,7 +89,7 @@ function DataPre() {
                                                     For local or private deployments, ensure your server environment can expose slide paths via HTTP(S) URLs.
                                                     </li>
                                                 </ol>
-                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -218,26 +216,9 @@ function DataPre() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* <nav>
-                            <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a className="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                                <a className="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-                                <a className="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-                            </div>
-                        </nav>
-                        <div className="tab-content" id="nav-tabContent">
-                            <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">111</div>
-                            <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">222</div>
-                            <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">333</div>
-                        </div> */}
-
-
                     </div>
                 </div>
             </div>
-
-
         </>
     );
 }

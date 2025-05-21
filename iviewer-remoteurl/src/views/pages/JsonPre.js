@@ -1,9 +1,7 @@
 import React from 'react';
 import Banner from '../Banner';
 import '../../assets/css/viewer.css';
-
 function JsonPre() {
-
     return (
         <>
             <Banner message="Prepare Json File for Region Level, Spot Level and Cell Level Image Display">
@@ -12,7 +10,6 @@ function JsonPre() {
             <div className="section features-6">
                 <div className="container">
                 <div className="row align-items-center">
-                   
                    <div className="nav-wrapper">
                        <ul className="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-text" role="tablist">
                            <li className="nav-item">
@@ -21,15 +18,12 @@ function JsonPre() {
                            <li className="nav-item">
                                <a className="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab" data-toggle="tab" href="#tabs-text-2" role="tab" aria-controls="tabs-text-2" aria-selected="false">Multiple Images</a>
                            </li>
-                        
                        </ul>
                    </div>
                    <div className="card shadow">
                        <div className="card-body">
                            <div className="tab-content" id="myTabContent">
                                <div className="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
-                                  
-                               
                                <p className="description">If you are not familiar with JSON format, please go to home page to download single and multiple Image
                                JSON file examples, and replace values. You can also go to JSON Editor to validate your json file</p>
                                <p className="description">If you only have one wholeslide to view, you need provide below keys and values in a JSON file: </p>
@@ -70,10 +64,8 @@ function JsonPre() {
                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;<br/> 
                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125; <br/>&#93;</p>
                                 </pre>
-                            
-                              
-                               </div>
-                               <div className="tab-pane fade" id="tabs-text-2" role="tabpanel" aria-labelledby="tabs-text-2-tab">
+                            </div>
+                            <div className="tab-pane fade" id="tabs-text-2" role="tabpanel" aria-labelledby="tabs-text-2-tab">
                                <p className="description">If you are not familiar with JSON format, please go to home page to download single and multiple Image
                                JSON file examples, and replace values. You can also go to JSON Editor to validate your json file. If you have more than one wholeslide to view, your JSON array contains more than one item object. You will view
                                a image table first. Select one image you want to view from the table</p>
@@ -120,21 +112,15 @@ function JsonPre() {
                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;<br/> 
                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125; <br/>&#93;</p>
                                 </pre>
-                               </div>
-                        
-                              
-                           </div>
+                            </div>    
+                        </div>
                        </div>
                    </div>
-
-
-
-               </div>
-                   
-                </div>
+                </div>   
             </div>
-        </>
-    );
+        </div>
+    </>
+);
 }
 
 export default JsonPre;

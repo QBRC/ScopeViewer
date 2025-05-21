@@ -4,7 +4,6 @@ import JsonEditor from '../JsonEditor';
 import { useLocation } from 'react-router-dom'
 
 function JsonValidate() {
-
     const location = useLocation();
     let model={};
     if(location.state){
@@ -17,14 +16,8 @@ function JsonValidate() {
                 <h4 className="text-white"><i className="fa fa-upload"></i> &nbsp;&nbsp;Validate Json File</h4>
             </Banner>
             <div className="section features-6">
-                <div className="container align-items-center">
-             
-                   
-                <JsonEditor model={model}/>
-
-
-             
-                   
+                <div className="container align-items-center">  
+                    <JsonEditor model={model}/>
                 </div>
             </div>
         </>

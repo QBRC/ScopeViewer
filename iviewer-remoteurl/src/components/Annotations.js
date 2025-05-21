@@ -30,10 +30,8 @@ class Annotations extends Component {
 
             SelectorPack(leftAnno);
             SelectorPack(rightAnno);
-            // // console.log(anno.listDrawingTools());
             const btnsTip = document.querySelectorAll(".a9s-toolbar-btn");
             let activeBtn = null, annoid = null;
-            //
             btnsTip.forEach((btnTip) => {
                 btnTip.addEventListener("click", (e) => {
                     e.currentTarget.classList.add("active");
@@ -81,14 +79,10 @@ class Annotations extends Component {
                 leftAnno: leftAnno,
                 rightAnno:rightAnno
               })
-
-
         }
-
     }
 
     render() {
-
         return (
             <div className="row">
                 <div id="toolbar" className="col-sm-4">
@@ -136,12 +130,6 @@ class Annotations extends Component {
                         </svg></span></button>
                         <button id="change-mode" className="a9s-toolbar-btn changemode"><span className="a9s-toolbar-btn-inner" style={{paddingLeft:"3px",fontSize: "23px"}}>
                             <i className="fa fa-arrows-alt" aria-hidden="true"></i>
-                            {/* <svg viewBox="0 0 70 50">
-                             <g>
-                                <path d="M 2 1 L 41 50 M 42 1 L 2 50"></path>
-                            </g> 
-                        </svg> */}
-         
                         </span></button>
                     </div>
                 </div>
@@ -150,5 +138,4 @@ class Annotations extends Component {
         )
     }
 }
-
 export default Annotations;

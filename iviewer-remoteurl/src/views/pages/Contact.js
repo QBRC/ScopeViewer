@@ -2,9 +2,7 @@ import React from 'react';
 import Banner from '../Banner';
 import '../../assets/css/viewer.css';
 
-
 function Contact() {
-
     return (
         <>
             <Banner message="">
@@ -12,21 +10,16 @@ function Contact() {
             </Banner>
             <div className="section features-6" style={{ paddingTop: "2rem" }}>
                 <div className="container">
-
                     <div className="row align-items-center">
-
                         <div className="card shadow">
                             <div className="card-body">
                                 <div className="tab-content" id="myTabContent">
                                     <div className="tab-pane fade show active" id="tabs-text-0" role="tabpanel" aria-labelledby="tabs-text-0-tab">
                                         <div className="row">
-
-
                                             <div className="card testimonial-card col-md-4">
                                                 <div className="card-up indigo"></div>
                                                 <div className="avatar"><img className="rounded-circle" src={require("../../assets/img/andy.jpg")} alt="Andy"/></div>
                                                 <div className="card-body text-center">
-
                                                     <h5 className="card-title">Guanghua (Andy) Xiao</h5>
                                                     <small>
                                                         Professor of Data Sciences<br />Mary Dees McDermott Hicks Chair in Medical Science
@@ -50,7 +43,6 @@ function Contact() {
                                                 <div className="card-up blue-gradient"></div>
                                                 <div className="avatar"><img className="rounded-circle" src={require("../../assets/img/xiaowei.jpg")} alt="Xiaowei"/></div>
                                                 <div className="card-body text-center">
-
                                                     <h5 className="card-title">Xiaowei Zhan</h5>
                                                     <small>
                                                     Associate Professor of Data Sciences <br /><br /><br />
@@ -93,22 +85,14 @@ function Contact() {
                                                     </div>
                                                 </div>
                                             </div>
-
-
-
                                         </div>
-
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
-
         </>
     );
 }

@@ -19,12 +19,18 @@ class ImageViewer extends Component {
         this.smpexist = null;
     }
 
-    getTileSource(url, server, imageId) {
+    getTileSource(url, apiserver, apiproxy,imageId) {
         if (!url) return null;
       
         const isRemote = url.startsWith("http://") || url.startsWith("https://");
         const isDzi    = url.toLowerCase().endsWith(".dzi");
+
+        const apiBase = apiserver.replace(/\/+$/, ""); 
+        const proxyBase = apiproxy ? `/${apiproxy.replace(/^\/+|\/+$/g, "")}` : "";
       
+        const fileParam = encodeURIComponent(url);
+        const proxyUrl = `${apiBase}${proxyBase}/dummy.dzi?image_id=${imageId}&file=${fileParam}&registry=slide`;
+
         // Remote DZI: just point OpenSeadragon at it
         if (isRemote && isDzi) {
           console.log("Remote DZI:", url);
@@ -34,21 +40,20 @@ class ImageViewer extends Component {
         // Remote slide (svs/tif/etc) → proxy to dummy.dzi
         if (isRemote && !isDzi) {
           console.log("Remote slide via proxy:", url);
-          const fileParam = encodeURIComponent(url);
-          return `${server}/proxy/dummy.dzi?image_id=${imageId}&file=${fileParam}&registry=slide`;
+          return proxyUrl;
         }
       
         // Local DZI: serve from your static mount (e.g. /slides or /dzislides)
         if (!isRemote && isDzi) {
           console.log("Local DZI:", url);
-          return `${server}/${url}`;
+          const normalizedUrl = url.startsWith("/") ? url : `/${url}`;
+          return `${apiBase}${normalizedUrl}`;
         }
       
         //  Local slide (svs/tif/etc) → proxy to dummy.dzi
         //    (FastAPI will read slides/foo.svs from disk)
         console.log("Local slide via proxy:", url);
-        const fileParam = encodeURIComponent(url);
-        return `${server}/proxy/dummy.dzi?image_id=${imageId}&file=${fileParam}&registry=slide`;
+        return proxyUrl;
       }
       
 
@@ -67,9 +72,10 @@ class ImageViewer extends Component {
             selectedimg = singleImgJSON[0];
         }
         const apiserver = process.env.REACT_APP_API_SERVER;
+        const apiproxy = process.env.REACT_APP_API_PROXY_PATH;
         const { image_id, tile_folder_url, mask_url } = selectedimg;
-        tileurl = this.getTileSource(tile_folder_url, apiserver, image_id);
-        maskurl = this.getTileSource(mask_url, apiserver, image_id) || tileurl;
+        tileurl = this.getTileSource(tile_folder_url, apiserver, apiproxy, image_id);
+        maskurl = this.getTileSource(mask_url, apiserver, apiproxy, image_id) || tileurl;
         maskurl = maskurl || tileurl;
         this.legend = selectedimg.legend;
         this.smpexist = Boolean(selectedimg?.smp_layer);

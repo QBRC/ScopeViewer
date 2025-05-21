@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Editor, { loader } from "@monaco-editor/react";
 import { Link } from 'react-router-dom';
-
 import singleImg from "../assets/json/oneimg.json";
 import multiImg from "../assets/json/multipleimgs.json";
 
@@ -69,9 +68,8 @@ loader.init().then((monaco) => {
 
 function JsonEditor(props) {
     const hiddenFileInput = useRef(null);
-
     const [examplejson, setExamplejson] = useState([]);
-    
+
     //Track validation state
     const [alertType, setAlertType] = useState("success");
     const [errMessage, setErrMessage] = useState([]);
@@ -81,37 +79,37 @@ function JsonEditor(props) {
     const [localSlides, setLocalSlides] = useState([]);
 
     useEffect(() => {
-      async function loadSlides() {
-        try {
-          const slidesUrl = `${process.env.PUBLIC_URL || ''}/slides.json`;
-          const response = await fetch(slidesUrl, { cache: 'no-store' });
-          if (!response.ok) throw new Error('no slides.json');
+        async function loadSlides() {
+            try {
+                const slidesUrl = `${process.env.PUBLIC_URL || ''}/slides.json`;
+                const response = await fetch(slidesUrl, { cache: 'no-store' });
+                if (!response.ok) throw new Error('no slides.json');
 
-          // Read the raw text once
-          const text = await response.text();
-          const payload = JSON.parse(text);
-  
-          // accept if it’s an array of objects
-          if (!Array.isArray(payload)) {
-            throw new Error('slides.json is not an array');
-          }
-          setLocalSlides(payload);
-          setExamplejson(payload);
-          setIsLocal(true);
-        } catch (err) {
-          console.log('slides.json missing/invalid, falling back to demo', err);
-          // fallback to whatever props.model or singleImg
-          if (props.model && props.model.length) {
-            setExamplejson(props.model);
-          } else {
-            setExamplejson(singleImg);
-          }
-          setIsLocal(false);
+                // Read the raw text once
+                const text = await response.text();
+                const payload = JSON.parse(text);
+
+                // accept if it’s an array of objects
+                if (!Array.isArray(payload)) {
+                    throw new Error('slides.json is not an array');
+                }
+                setLocalSlides(payload);
+                setExamplejson(payload);
+                setIsLocal(true);
+            } catch (err) {
+                console.log('slides.json missing/invalid, falling back to demo', err);
+                // fallback to whatever props.model or singleImg
+                if (props.model && props.model.length) {
+                    setExamplejson(props.model);
+                } else {
+                    setExamplejson(singleImg);
+                }
+                setIsLocal(false);
+            }
         }
-      }
-      loadSlides();
+        loadSlides();
     }, [props.model]);
-  
+
     function handleloadLocal() {
         setExamplejson(localSlides)
         setErrMessage([]);
@@ -194,7 +192,7 @@ function JsonEditor(props) {
                 {/* If we have local slides.json, offer a one-click reload */}
                 {isLocal && (
                     <button className="btn btn-outline-primary mr-2" onClick={handleloadLocal}>
-                    Load Local Slides
+                        Load Local Slides
                     </button>
                 )}
                 {/* Always offer the built-in examples */}

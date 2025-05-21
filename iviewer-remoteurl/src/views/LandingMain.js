@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 function LandingMain({children}) {
     return (
-
         <>
             <div className="section features-6">
                 <div className="container">
@@ -33,11 +32,10 @@ function LandingMain({children}) {
                         <div className="col-lg-6 col-10 mx-md-auto">
                             <img src={require("../assets/img/docs/steps.png")} width="115%" alt="scopeviewer_design" />
                         </div>
-                        </div>
                     </div>
                 </div>
+            </div>
         </>
     );
 }
-
 export default LandingMain;

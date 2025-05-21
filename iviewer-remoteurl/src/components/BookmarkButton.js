@@ -1,14 +1,12 @@
 import { Component } from 'react';
 import bs from '../assets/css/bootstrap.module.css';
 import Modal from './Modal';
-
 import $ from 'jquery';
 import LZstring from "lz-string";
 
 class BookmarkButton extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             showModal: false,
             icon: "",
@@ -21,15 +19,12 @@ class BookmarkButton extends Component {
     modalOpen = (e) => {
         e.preventDefault();
         this.setState({ showModal: true })
-
     }
 
     handleBookmark = () => {
-        //   const objString = '?' + new URLSearchParams(props.bookmarkobj).toString();
         const json = JSON.stringify(this.props.bookmarkobj);
         const size = new TextEncoder().encode(json).length
         const kiloBytes = size / 1024;
-
 
         if (kiloBytes <= 10) {
             const compressed = LZstring.compressToEncodedURIComponent(json)
@@ -41,15 +36,11 @@ class BookmarkButton extends Component {
               } else { // Otherwise fallback to the above function
                 this.setState({ icon: "bkfail"})
               }
-            // window.open(objString, "_blank");
             
         }
         else {
             this.setState({ icon: "toolarge", bkstatus: "JSON file is too large (more than 10KB)" })
         }
-
-
-
     }
 
     modalClose = () => {
@@ -73,40 +64,30 @@ class BookmarkButton extends Component {
             <>
                 <a href="" data-toggle="modal" data-target="#bookmark-modal" className={`${bs.btn} ${bs[`btn-outline-primary`]} ${bs[`btn-sm`]} ${bs[`d-inline-block`]}`} onClick={(e) => this.modalOpen(e)} style={{ marginRight: 0.8 + 'em' }}>
                     <i className="fa fa-bookmark"></i> Bookmark
-            </a>
-
+                </a>
                 <Modal show={this.state.showModal} whichmodal="bookmark">
-
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
-
                             <div className="modal-header">
                                 <h5 className="modal-title" id="bookmarkModalLabel">Bookmark</h5>
                                 <button className="close" type="button" data-dismiss="bookmark-modal" aria-label="Close" onClick={() => this.modalClose()}>
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
-
                             <div className="mt-3 text-center">
                                 <button className="btn btn-primary save-annotation" onClick={() => this.handleBookmark()}>Copy Url</button>
                                 {this.bkmessage}
-
                             </div>
-
                             <div className="modal-body">
-
                             </div>
                             <div className="modal-footer">
                                 <button className="btn btn-outline-secondary mr-3" type="button" data-dismiss="bookmark-modal" onClick={() => this.modalClose()}>Cancel</button>
                             </div>
                         </div>
                     </div>
-
                 </Modal>
-
             </>
         );
-
     }
 }
 

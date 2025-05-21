@@ -1,9 +1,9 @@
 [  
   {
   "image_id": 0,
-  "image_name": "Demo Whole Slide 002",
-  "pathology_histology": "Normal",
-  "tile_folder_url": "slides/9388.svs"
+  "image_name": "SVS Sample",
+  "pathology_histology": "svs format",
+  "tile_folder_url": "https://ai.swmed.edu/i-viewer/images/original/default/default/example1.svs"
 },
   {
     "image_id": 1,
