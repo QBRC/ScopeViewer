@@ -6,6 +6,7 @@ import { TwitterShareButton } from "react-share";
 //import { FacebookShareButton, TwitterShareButton } from "react-share";
 import singleImgJSON from "../assets/json/oneimg.json";
 import multiImGJSON from "../assets/json/multipleimgs.json";
+import liverJSON from "../assets/json/liverimgs.json";
 
 function NavigationBar() {
     const [multiimg, setMultiImg] = useState();
@@ -86,6 +87,7 @@ function NavigationBar() {
                                 <div className="dropdown-menu">
 
                                     <Link to={{ pathname:`/imagetable`, state: { jsonfile: multiimg } }} className="dropdown-item">Image Table</Link>
+                                    <Link to={{ pathname:`/imagetable/liver` }} className="dropdown-item">Liver Image Table</Link>
                                     <Link to={{ pathname: "/imageviewer", state: { selectedimg: singleimg } }} className="dropdown-item">Image Viewer</Link>
                                 </div>
                             </li>

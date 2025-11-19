@@ -28,7 +28,7 @@ class SideBarMenu extends Component {
                         <CellLevel cellmask={this.props.viewerinfo} />
                     </nav> */}
 
-                    <Draggable>
+                    <Draggable cancel=".no-drag, input, textarea, button, select">
                         <div id="float-window" className="window card z-depth-3 d-block">
                             <div id="window-header">
                                 <h6 className='text-white'>Layers

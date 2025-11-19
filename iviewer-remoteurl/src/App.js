@@ -33,7 +33,7 @@ function App() {
           <Route path="/prepareJson"  exact component={JsonPre}/>
           <Route path="/validateJson" exact component={JsonValidate}/>
           <Route path="/imageviewer" component={ImageViewer}/>
-          <Route path="/imagetable" component={ImageTable}/>
+          <Route path="/imagetable/:example?" component={ImageTable}/>
           <Route path="/contact" component={Contact}/>
 
           

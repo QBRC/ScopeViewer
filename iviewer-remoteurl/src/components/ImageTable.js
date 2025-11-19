@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { AiFillEye } from "react-icons/ai";
 import Banner from '../views/Banner';
 import multiImGJSON from "../assets/json/multipleimgs.json";
+import liverImGJSON from "../assets/json/liverimgs.json";
 
 class ImageTable extends Component {
     constructor(props) {
@@ -16,14 +17,61 @@ class ImageTable extends Component {
     }
 
     componentDidMount() {
-        if (this.props.location.state) {
-            this.setState({ data: this.props.location.state.jsonfile })
-        } else {
-            this.setState({ data: multiImGJSON })
+        const data = this.getDataFromProps();
+        this.setState({ data }, () => this.initDataTable());
+    }
+    componentDidUpdate(prevProps) {
+        // If the incoming location.pathname, location.state.jsonfile or route example param changed, reload data
+        const prevPath = prevProps.location && prevProps.location.pathname;
+        const currPath = this.props.location && this.props.location.pathname;
+
+        const prevJson = prevProps.location && prevProps.location.state && prevProps.location.state.jsonfile;
+        const currJson = this.props.location && this.props.location.state && this.props.location.state.jsonfile;
+        const prevJsonStr = prevJson ? JSON.stringify(prevJson) : null;
+        const currJsonStr = currJson ? JSON.stringify(currJson) : null;
+
+        const prevExample = prevProps.match && prevProps.match.params && prevProps.match.params.example;
+        const currExample = this.props.match && this.props.match.params && this.props.match.params.example;
+
+        if (prevPath !== currPath || prevJsonStr !== currJsonStr || prevExample !== currExample) {
+            const data = this.getDataFromProps();
+            // Rebuild table: destroy existing DataTable, update state (re-render tbody), then init DataTable
+            this.destroyDataTable();
+            this.setState({ data }, () => this.initDataTable());
         }
     }
-    componentDidUpdate() {
-        $('#img_table').DataTable();
+
+    componentWillUnmount() {
+        this.destroyDataTable();
+    }
+
+    getDataFromProps() {
+        // Priority: location.state.jsonfile (Link/Redirect), then URL param 'example', then default multiImGJSON
+        if (this.props.location && this.props.location.state && this.props.location.state.jsonfile) {
+            return this.props.location.state.jsonfile;
+        }
+        const exampleParam = this.props.match && this.props.match.params && this.props.match.params.example;
+        if (exampleParam && exampleParam.toLowerCase() === 'liver') {
+            return liverImGJSON;
+        }
+        return multiImGJSON;
+    }
+
+    initDataTable() {
+        // Ensure any existing instance is removed before creating a new one
+        if ($.fn.DataTable && $.fn.DataTable.isDataTable && $.fn.DataTable.isDataTable('#img_table')) {
+            try { $('#img_table').DataTable().destroy(); } catch (e) { /* ignore */ }
+        }
+        // Small timeout to ensure DOM updated by React
+        setTimeout(() => {
+            try { $('#img_table').DataTable(); } catch (e) { /* ignore */ }
+        }, 0);
+    }
+
+    destroyDataTable() {
+        if ($.fn.DataTable && $.fn.DataTable.isDataTable && $.fn.DataTable.isDataTable('#img_table')) {
+            try { $('#img_table').DataTable().destroy(); } catch (e) { /* ignore */ }
+        }
     }
 
     render() {

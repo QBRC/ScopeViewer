@@ -29,7 +29,10 @@ class ImageViewer extends Component {
         const proxyBase = apiproxy ? `/${apiproxy.replace(/^\/+|\/+$/g, "")}` : "";
       
         const fileParam = encodeURIComponent(url);
-        const proxyUrl = `${apiBase}${proxyBase}/dummy.dzi?image_id=${imageId}&file=${fileParam}&registry=slide`;
+        // Always generate a unique image_id for proxy requests to avoid collisions/caching issues.
+        // Use crypto.randomUUID() when available, otherwise fall back to timestamp+random.
+        const usedImageId = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : `img-${Date.now()}-${Math.random().toString(36).slice(2,9)}`;
+        const proxyUrl = `${apiBase}${proxyBase}/dummy.dzi?image_id=${usedImageId}&file=${fileParam}&registry=slide`;
 
         // Remote DZI: just point OpenSeadragon at it
         if (isRemote && isDzi) {

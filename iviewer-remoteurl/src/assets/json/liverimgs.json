@@ -1,0 +1,25 @@
+[  
+  {
+  "image_id": 1,
+  "image_name": "LGh001_049_HE_1500ppi_2024.02.23",
+  "pathology_histology": "tif format",
+  "tile_folder_url": "https://ai.swmed.edu/i-viewer/images/original/default/default/LGh001_049_HE_1500ppi_2024.02.23.tif",
+  "mask_url": "https://ai.swmed.edu/i-viewer/images/original/default/default/LGh001_049_HE_1500ppi_2024.02.23_mask.tif",
+  "legend":{
+      "central vein ": "#008080",
+      "portal": "#E1E100"
+    }
+},
+ {
+  "image_id": 2,
+  "image_name": "RGL_25a_HE_ST_1500ppi_2024.06.05",
+  "pathology_histology": "tif format",
+  "tile_folder_url": "https://ai.swmed.edu/i-viewer/images/original/default/default/RGL_25a_HE_ST_1500ppi_2024.06.05.tif",
+  "mask_url": "https://ai.swmed.edu/i-viewer/images/original/default/default/RGL_25a_mask.tif",
+  "smp_layer":"https://cdc.biohpc.swmed.edu/scopeviewer_data/RGL25a.db",
+  "legend":{
+      "central vein ": "#008080",
+      "portal": "#E1E100"
+    }
+}
+]
