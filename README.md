@@ -1,5 +1,15 @@
 # ScopeViewer — Quick Start Guide
 
+## Resources
+- Overview of ScopeViewer functions (video): https://youtu.be/1b0HWMr6wQ8?si=fH5aXZxfwlILP6pu
+- Set up ScopeViewer locally in 2 minutes (video): https://youtu.be/0edwi6C_eM8?si=RDPqS7p_DGOL_FHd
+- Downloadable dataset (Zenodo): https://zenodo.org/records/10039125
+  - Includes a sample 10x Visium dataset.
+  - Includes a pre-configured JSON file.
+
+After downloading the dataset, follow the step-by-step video guide for running `database.py` to convert the raw data into the ScopeViewer format:
+https://youtu.be/0edwi6C_eM8?si=RDPqS7p_DGOL_FHd
+
 ## 1. Get the Code
 - Clone the repository and enter the folder:  
   ```bash
