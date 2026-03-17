@@ -7,14 +7,14 @@
   - Includes a sample 10x Visium dataset.
   - Includes a pre-configured JSON file.
 
-After downloading the dataset, follow the step-by-step video guide for running `database.py` to convert the raw data into the ScopeViewer format:
+After downloading the dataset, follow the step-by-step video guide for running [database.py](https://cdc.biohpc.swmed.edu/scopeviewer/database.py) to convert the raw data into the ScopeViewer format:
 https://youtu.be/0edwi6C_eM8?si=RDPqS7p_DGOL_FHd
 
 ## 1. Get the Code
 - Clone the repository and enter the folder:  
   ```bash
   git clone https://github.com/QBRC/ScopeViewer.git
-  cd scopeviewer
+  cd ScopeViewer
    ```
  - The repo already includes:
     - docker-compose.yml
